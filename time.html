@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(13, 163, 244);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .container  img{
+        width: 50%;
+        height: auto;
+        /* margin-left: 180px; */
+    }
+    #date{
+     position: absolute;
+    top: 130px;
+    left: 545px;
+    color: aliceblue;
+    font-size: 3.4rem;
+    letter-spacing: 2px;
+    }
+    #time{
+    position: absolute;
+    top: 200px;
+    left: 520px;
+    color: aliceblue;
+    font-size: 3.4rem;
+    letter-spacing: 2px;
+    }
+    .quote{
+        position: absolute;
+        text-align: center;
+        bottom: 110px;
+        color: aliceblue;
+        font-size: 1.5rem;
+        left:520px;
+    }
+    .quote h2{
+        color: cornflowerblue;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+<body>
+    <div class="container">
+        <img src="bg-time.jpg" alt="Background image">
+        
+        <h1 id="date"></h1> <br>
+        <h1 id="time"></h1>
+        <div class="quote">
+            <p>Time</p>
+            <h2>Time is an illusion</h2>
+        </div>
+    </div>
+    <script>
+        let date = document.getElementById("date");
+        let time = document.getElementById("time");
+        setInterval(()=>{
+        let d= new Date();
+        let fullDate= d.toLocaleDateString();
+        let currentTime= d.toLocaleTimeString();
+        date.innerHTML= fullDate;
+        time.innerHTML = currentTime;
+        },1000); //1000millisecond = 1 sec
+    </script>
+</body>
+</html>
